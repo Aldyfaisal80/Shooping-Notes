@@ -1,6 +1,6 @@
 import Footer from "../fragments/Footer";
 import Form from "../fragments/Form";
-import GroceryItemProduct from "../fragments/GroceryItemProduct";
+import GroceryItemProduct from "../fragments/GroceryProduct";
 import Header from "../fragments/Header";
 
 export default function MainLayouts() {
@@ -8,7 +8,7 @@ export default function MainLayouts() {
         <>
             <Header />
             <Form />
-            <GroceryItemProduct />
+            <GroceryItemProduct items={groceryItems} />
             <Footer />
         </>
     )

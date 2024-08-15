@@ -1,9 +1,13 @@
+import { useState } from "react";
 import ProductItems from "../elements/ItemsProduct";
-export default function GroceryItemProduct() {
+import groceryItems from "../../features/product/GroceryItems";
+export default function GroceryProduct() {
+    const [items , setItems] = useState(groceryItems);
+    
     return (
         <div>
             <div className="list">
-                <ProductItems {...{children: null}}/>
+                <ProductItems/>
             </div>
             <div className="actions">
                 <select>
