@@ -1,5 +1,6 @@
-import { GroceryItemsProps } from "../../features/product/GroceryItems";
+// import  GroceryItemsProps  from "../../features/product/GroceryItems";
 import { useState } from "react";
+import ItemsProductsBadge from "../elements/ItemsProductBadge";
 type GroceryItemProductProps = {
     items: GroceryItemsProps[];
     onDeleteItem: (id: number) => void;
@@ -25,28 +26,18 @@ export default function GroceryProduct({ items, onDeleteItem, onToggleItem, onCl
 
     return (
         <div>
-                {/* <ProductItems/> */}
-            <div className="list">
-                <ul>
-                    {sortedItems.map((item) => (
-                        <li key={item.id}>
-                            <input onChange={() => onToggleItem(item.id)} type="checkbox" checked={item.checked} readOnly />
-                            <span style={item.checked ? { textDecoration: "line-through" } : {}}>
-                                {item.quantity} {item.name}
-                            </span>
-                            <button onClick={() => onDeleteItem(item.id)}>&times;</button>
-                        </li>
-                    ))}
-                </ul>
-            </div>
-            <div className="actions">
-                <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
-                    <option value="input">Urutkan berdasarkan urutan input</option>
-                    <option value="name">Urutkan berdasarkan nama barang</option>
-                    <option value="checked">Urutkan berdasarkan ceklis</option>
-                </select>
-                <button onClick={onClearItem}>Bersihkan Daftar</button>
-            </div>
+            <ItemsProductsBadge>
+                <ItemsProductsBadge.ProductItems
+                    items={sortedItems}
+                    onDeleteItem={onDeleteItem}
+                    onToggleItem={onToggleItem}
+                />
+                <ItemsProductsBadge.ItemsActions
+                    sortBy={sortBy}
+                    setSortBy={setSortBy}
+                    onClearItem={onClearItem}
+                />
+            </ItemsProductsBadge>
         </div>
     )
 }
