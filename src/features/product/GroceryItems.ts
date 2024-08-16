@@ -3,7 +3,6 @@ type GroceryItemsProps = {
   name: string;
   quantity: number;
   checked: boolean;
-  
 };
 const groceryItems: GroceryItemsProps[]  =  [
     {
@@ -26,4 +25,4 @@ const groceryItems: GroceryItemsProps[]  =  [
     },
   ];
 
-  export default groceryItems
+export default groceryItems

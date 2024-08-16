@@ -1,7 +1,7 @@
 export default function Header() {
   return (
     <>
-    <h1>Catatan Belanjaku 📝</h1>
+      <h1 className="font-Borel">Catatan Belanjaku 📝</h1>
     </>
   )
 }
