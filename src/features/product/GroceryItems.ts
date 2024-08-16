@@ -1,4 +1,11 @@
-const groceryItems = [
+type GroceryItemsProps = {
+  id: number;
+  name: string;
+  quantity: number;
+  checked: boolean;
+  
+};
+const groceryItems: GroceryItemsProps[]  =  [
     {
       id: 1,
       name: 'Kopi Bubuk',

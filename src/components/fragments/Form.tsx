@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Form() {
+export default function Form({ onAddItem }: any) {
 
     const [name, setName] = useState<string>("");
     const [quantity, setQuantity] = useState<number>(1);
@@ -16,10 +16,10 @@ export default function Form() {
             checked: false,
             id: Date.now(),
         };
-
+        onAddItem(newItem);
     }
 
-    const quantityNum = [...Array(5)].map((_, i) => (
+    const quantityNum = [...Array(20)].map((_, i) => (
         <option value={i + 1} key={i + 1}>
             {i + 1}
         </option>

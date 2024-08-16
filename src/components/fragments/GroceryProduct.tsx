@@ -2,7 +2,6 @@ import { useState } from "react";
 import ProductItems from "../elements/ItemsProduct";
 import groceryItems from "../../features/product/GroceryItems";
 export default function GroceryProduct() {
-    const [items , setItems] = useState(groceryItems);
     
     return (
         <div>
